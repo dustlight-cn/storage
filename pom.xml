@@ -5,7 +5,7 @@
     <packaging>pom</packaging>
     <groupId>cn.dustlight.storage</groupId>
     <artifactId>storage</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>storage</name>
     <description>Storage service for Spring Boot</description>
 
@@ -17,4 +17,60 @@
         <module>storage-core</module>
         <module>tencent-cloud-object-storage</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <name>OSS Snapshots Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <name>OSS Staging Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <url>https://github.com/Hansin1997/Storage</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo,manual</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Hansin1997</name>
+            <email>hansin@dustlight.cn</email>
+            <url>https://github.com/Hansin1997</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/Hansin1997/Storage.git</connection>
+        <developerConnection>scm:git:https://github.com/Hansin1997/Storage.git</developerConnection>
+        <url>https://github.com/Hansin1997/Storage</url>
+        <tag>0.0.1-SNAPSHOT</tag>
+    </scm>
 </project>
