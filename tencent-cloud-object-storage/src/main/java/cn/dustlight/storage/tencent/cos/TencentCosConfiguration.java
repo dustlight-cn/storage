@@ -1,4 +1,4 @@
-package cn.dustlight.storage.tencent;
+package cn.dustlight.storage.tencent.cos;
 
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.dustlight.storage</groupId>
     <artifactId>storage-core</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>storage-core</name>
     <description>Storage service core module for Spring Boot</description>
 
@@ -111,6 +111,5 @@
         <connection>scm:git:https://github.com/Hansin1997/Storage.git</connection>
         <developerConnection>scm:git:https://github.com/Hansin1997/Storage.git</developerConnection>
         <url>https://github.com/Hansin1997/Storage</url>
-        <tag>0.0.1-SNAPSHOT</tag>
     </scm>
 </project>

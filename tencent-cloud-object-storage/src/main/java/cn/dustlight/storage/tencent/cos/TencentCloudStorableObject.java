@@ -1,4 +1,4 @@
-package cn.dustlight.storage.tencent;
+package cn.dustlight.storage.tencent.cos;
 
 import cn.dustlight.storage.core.StorableObject;
 import cn.dustlight.storage.core.Permission;

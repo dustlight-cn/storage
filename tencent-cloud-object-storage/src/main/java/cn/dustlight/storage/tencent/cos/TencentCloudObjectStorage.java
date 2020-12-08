@@ -1,4 +1,4 @@
-package cn.dustlight.storage.tencent;
+package cn.dustlight.storage.tencent.cos;
 
 import cn.dustlight.storage.core.*;
 import com.qcloud.cos.COSClient;
@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 腾讯云对象存储器
+ */
 public class TencentCloudObjectStorage implements RestfulStorage {
 
     COSClient cosClient;

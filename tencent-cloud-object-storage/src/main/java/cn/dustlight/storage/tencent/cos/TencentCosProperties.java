@@ -1,4 +1,4 @@
-package cn.dustlight.storage.tencent;
+package cn.dustlight.storage.tencent.cos;
 
 import com.qcloud.cos.http.HttpProtocol;
 import org.springframework.boot.context.properties.ConfigurationProperties;
