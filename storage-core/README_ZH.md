@@ -1,18 +1,13 @@
-# Storage
+# Storage-Core
 **README** [English](README.md) | [简体中文](README_ZH.md)
 
 ## 简介
-**Storage**是一个基于Java语言开发的Maven项目，它为Spring Boot项目提供了便于使用的存储服务，包含本地存储和各种云存储。该项目正在维护中，欢迎提交Issue和代码。😀
+**Storage-Core**是**Storage**项目的核心模块，提供存储服务相关的抽象接口以及本地存储实现。
 
 [![Build Status](https://travis-ci.org/Hansin1997/Storage.svg?branch=main)](https://travis-ci.org/Hansin1997/Storage) 
 [![GitHub](https://img.shields.io/github/license/Hansin1997/Storage)](LICENSE)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
-
-## 模块
-* 核心模块[![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/storage-core)](https://mvnrepository.com/artifact/cn.dustlight.storage/storage-core)
- —— [storage-core](storage-core)：提供抽象接口以及本地存储实现。
-* 腾讯云对象存储模块 [![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/tencent-cloud-object-storage)](https://mvnrepository.com/artifact/cn.dustlight.storage/tencent-cloud-object-storage)
- —— [tencent-cloud-object-storage](tencent-cloud-object-storage)：基于 [腾讯云对象存储(COS)](https://cloud.tencent.com/product/cos) 服务的实现。
+[![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/storage-core)](https://mvnrepository.com/artifact/cn.dustlight.storage/storage-core)
 
 ## 集成
 将依赖添加到Maven项目中：

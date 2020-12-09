@@ -1,20 +1,13 @@
-# Storage 
+# Storage-Core
 **README** [English](README.md) | [简体中文](README_ZH.md)
 
 ## Introductions
-**Storage** is project based on java language development, it provides an easy-to-use storage service for the Spring Boot project, including local storage and cloud storage.
-This project is under maintenance. Welcome for your issues and pull request. 😀
+**Storage-Core** is core module of **Storage**, it provides abstract interfaces and a local storage implementation.
 
 [![Build Status](https://travis-ci.org/Hansin1997/Storage.svg?branch=main)](https://travis-ci.org/Hansin1997/Storage) 
 [![GitHub](https://img.shields.io/github/license/Hansin1997/Storage)](LICENSE)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
-
-## Module
-* Core Module [![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/storage-core)](https://mvnrepository.com/artifact/cn.dustlight.storage/storage-core)
- —— [storage-core](storage-core): Provides abstract interfaces and a local storage implementation.
-
-* Tencent Cloud Object Storage Module [![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/tencent-cloud-object-storage)](https://mvnrepository.com/artifact/cn.dustlight.storage/tencent-cloud-object-storage)
- —— [tencent-cloud-object-storage](tencent-cloud-object-storage): The implementation of the service based on [Tencent Cloud Object Storage (COS)](https://cloud.tencent.com/product/cos).
+[![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/storage-core)](https://mvnrepository.com/artifact/cn.dustlight.storage/storage-core)
 
 ## Download
 Grab via Maven:
