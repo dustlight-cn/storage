@@ -7,7 +7,8 @@
 [![Build Status](https://travis-ci.org/Hansin1997/Storage.svg?branch=main)](https://travis-ci.org/Hansin1997/Storage) 
 [![GitHub](https://img.shields.io/github/license/Hansin1997/Storage)](LICENSE)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
-[![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/storage-core)](https://mvnrepository.com/artifact/cn.dustlight.storage/storage-core)
+![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/cn.dustlight.storage/storage-core?server=https%3A%2F%2Foss.sonatype.org)
+![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/cn.dustlight.storage/storage-core?server=https%3A%2F%2Foss.sonatype.org)
 
 ## Download
 Grab via Maven:
@@ -15,7 +16,7 @@ Grab via Maven:
 <dependency>
   <groupId>cn.dustlight.storage</groupId>
   <artifactId>storage-core</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 

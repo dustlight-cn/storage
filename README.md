@@ -10,11 +10,9 @@ This project is under maintenance. Welcome for your issues and pull request. �
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
 
 ## Module
-* Core Module [![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/storage-core)](https://mvnrepository.com/artifact/cn.dustlight.storage/storage-core)
- —— [storage-core](storage-core): Provides abstract interfaces and a local storage implementation.
+* [Core Module](storage-core): Provides abstract interfaces and a local storage implementation.
 
-* Tencent Cloud Object Storage Module [![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/tencent-cloud-object-storage)](https://mvnrepository.com/artifact/cn.dustlight.storage/tencent-cloud-object-storage)
- —— [tencent-cloud-object-storage](tencent-cloud-object-storage): The implementation of the service based on [Tencent Cloud Object Storage (COS)](https://cloud.tencent.com/product/cos).
+* [Tencent Cloud Object Storage Module](tencent-cloud-object-storage): The implementation of the service based on [Tencent Cloud Object Storage (COS)](https://cloud.tencent.com/product/cos).
 
 ## Download
 Grab via Maven:
@@ -22,7 +20,7 @@ Grab via Maven:
 <dependency>
   <groupId>cn.dustlight.storage</groupId>
   <artifactId>storage-core</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 

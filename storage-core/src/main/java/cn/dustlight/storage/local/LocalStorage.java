@@ -52,15 +52,17 @@ public class LocalStorage implements Storage {
     @Override
     public LocalStorableObject put(String key, StorableObject source, int permission) throws IOException {
         LocalStorableObject target = new LocalStorableObject(root, key, permission);
-        BufferedInputStream in = new BufferedInputStream(source.getInputStream());
-        BufferedOutputStream out = new BufferedOutputStream(target.getOutputStream());
-        byte[] buff = new byte[1024];
-        int b;
-        while ((b = in.read(buff, 0, buff.length)) > 0)
-            out.write(buff, 0, b);
-        in.close();
-        out.close();
-        return target;
+        try (BufferedInputStream in = new BufferedInputStream(source.getInputStream())) {
+            try (BufferedOutputStream out = new BufferedOutputStream(target.getOutputStream())) {
+                byte[] buff = new byte[1024];
+                int b;
+                while ((b = in.read(buff, 0, buff.length)) > 0)
+                    out.write(buff, 0, b);
+                in.close();
+                out.close();
+                return target;
+            }
+        }
     }
 
     @Override

@@ -9,10 +9,8 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
 
 ## 模块
-* 核心模块[![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/storage-core)](https://mvnrepository.com/artifact/cn.dustlight.storage/storage-core)
- —— [storage-core](storage-core)：提供抽象接口以及本地存储实现。
-* 腾讯云对象存储模块 [![Maven Central](https://img.shields.io/maven-central/v/cn.dustlight.storage/tencent-cloud-object-storage)](https://mvnrepository.com/artifact/cn.dustlight.storage/tencent-cloud-object-storage)
- —— [tencent-cloud-object-storage](tencent-cloud-object-storage)：基于 [腾讯云对象存储(COS)](https://cloud.tencent.com/product/cos) 服务的实现。
+* [核心模块](storage-core)：提供抽象接口以及本地存储实现。
+* [腾讯云对象存储模块](tencent-cloud-object-storage)：基于 [腾讯云对象存储(COS)](https://cloud.tencent.com/product/cos) 服务的实现。
 
 ## 集成
 将依赖添加到Maven项目中：
@@ -20,7 +18,7 @@
 <dependency>
   <groupId>cn.dustlight.storage</groupId>
   <artifactId>storage-core</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 
