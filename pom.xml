@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
     <groupId>cn.dustlight.storage</groupId>
     <artifactId>storage</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <name>storage</name>
     <description>Storage service for Spring Boot</description>
 
@@ -30,7 +30,12 @@
             <dependency>
                 <groupId>cn.dustlight.storage</groupId>
                 <artifactId>storage-core</artifactId>
-                <version>0.0.3</version>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dustlight.storage</groupId>
+                <artifactId>tencent-cloud-object-storage</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -127,7 +132,7 @@
         </repository>
     </distributionManagement>
 
-    <url>https://github.com/Hansin1997/Storage</url>
+    <url>https://github.com/dustlight-cn/storage</url>
 
     <licenses>
         <license>
@@ -146,8 +151,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/Hansin1997/Storage.git</connection>
-        <developerConnection>scm:git:https://github.com/Hansin1997/Storage.git</developerConnection>
-        <url>https://github.com/Hansin1997/Storage</url>
+        <connection>scm:git:https://github.com/dustlight-cn/storage.git</connection>
+        <developerConnection>scm:git:https://github.com/dustlight-cn/storage.git</developerConnection>
+        <url>https://github.com/dustlight-cn/storage</url>
     </scm>
 </project>

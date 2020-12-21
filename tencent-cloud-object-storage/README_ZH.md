@@ -5,9 +5,9 @@
 **Tencent-Cloud-Object-Storage**是**Storage**项目的云存储实现，基于 [腾讯云对象存储服务(COS)](https://cloud.tencent.com/product/cos) 。
 它为Spring Boot项目提供方便的数据存储服务，并且可以生成上传，下载以及删除URL以提供客户端访问来避免本地IO。
 
-[![Build Status](https://travis-ci.org/Hansin1997/Storage.svg?branch=main)](https://travis-ci.org/Hansin1997/Storage) 
-[![GitHub](https://img.shields.io/github/license/Hansin1997/Storage)](LICENSE)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
+[![Build Status](https://travis-ci.org/dustlight-cn/storage.svg?branch=main)](https://travis-ci.org/dustlight-cn/storage) 
+[![GitHub](https://img.shields.io/github/license/dustlight-cn/storage)](LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/dustlight-cn/storage)](https://github.com/dustlight-cn/storage/releases)
 ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/cn.dustlight.storage/tencent-cloud-object-storage?server=https%3A%2F%2Foss.sonatype.org)
 ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/cn.dustlight.storage/tencent-cloud-object-storage?server=https%3A%2F%2Foss.sonatype.org)
 
@@ -108,7 +108,7 @@ public class DemoApplication implements ApplicationRunner {
 }
 ```
 
-完整说明请查看 [wiki](https://github.com/Hansin1997/Storage/wiki) 。
+完整说明请查看 [wiki](https://github.com/dustlight-cn/storage/wiki) 。
 
 ## 获取帮助
-如果需要报告问题或者功能需求，请在Github中 [创建issue](https://github.com/Hansin1997/Storage/issues/new) 。若有其他问题或建议，请发送电子邮件至 [hansin@dustlight.cn](mailto:hansin@dustlight.cn)
+如果需要报告问题或者功能需求，请在Github中 [创建issue](https://github.com/dustlight-cn/storage/issues/new) 。若有其他问题或建议，请发送电子邮件至 [hansin@dustlight.cn](mailto:hansin@dustlight.cn)

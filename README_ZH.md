@@ -4,9 +4,10 @@
 ## 简介
 **Storage**是一个基于Java语言开发的Maven项目，它为Spring Boot项目提供了便于使用的存储服务，包含本地存储和各种云存储。该项目正在维护中，欢迎提交Issue和代码。😀
 
-[![Build Status](https://travis-ci.org/Hansin1997/Storage.svg?branch=main)](https://travis-ci.org/Hansin1997/Storage) 
-[![GitHub](https://img.shields.io/github/license/Hansin1997/Storage)](LICENSE)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
+
+[![Build Status](https://travis-ci.org/dustlight-cn/storage.svg?branch=main)](https://travis-ci.org/dustlight-cn/storage) 
+[![GitHub](https://img.shields.io/github/license/dustlight-cn/storage)](LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/dustlight-cn/storage)](https://github.com/dustlight-cn/storage/releases)
 
 ## 模块
 * [核心模块](storage-core)：提供抽象接口以及本地存储实现。
@@ -78,7 +79,7 @@ storage.remove("text.txt"); // 删除object
 
 [腾讯云对象存储模块](tencent-cloud-object-storage) 中的 TencentCloudObjectStorage 提供了URL的生成，可以生成 get,put,remove 的URL。
 
-完整说明请查看 [wiki](https://github.com/Hansin1997/Storage/wiki) 。
+完整说明请查看 [wiki](https://github.com/dustlight-cn/storage/wiki) 。
 
 ## 获取帮助
-如果需要报告问题或者功能需求，请在Github中 [创建issue](https://github.com/Hansin1997/Storage/issues/new) 。若有其他问题或建议，请发送电子邮件至 [hansin@dustlight.cn](mailto:hansin@dustlight.cn)
+如果需要报告问题或者功能需求，请在Github中 [创建issue](https://github.com/dustlight-cn/storage/issues/new) 。若有其他问题或建议，请发送电子邮件至 [hansin@dustlight.cn](mailto:hansin@dustlight.cn)

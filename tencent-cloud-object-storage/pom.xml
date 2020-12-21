@@ -5,7 +5,7 @@
     <parent>
         <groupId>cn.dustlight.storage</groupId>
         <artifactId>storage</artifactId>
-        <version>0.0.3</version>
+        <version>0.0.4-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>tencent-cloud-object-storage</artifactId>
@@ -62,20 +62,7 @@
         </plugins>
     </build>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <name>OSS Snapshots Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <name>OSS Staging Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
-    <url>https://github.com/Hansin1997/Storage</url>
+    <url>https://github.com/dustlight-cn/storage</url>
 
     <licenses>
         <license>
@@ -94,8 +81,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/Hansin1997/Storage.git</connection>
-        <developerConnection>scm:git:https://github.com/Hansin1997/Storage.git</developerConnection>
-        <url>https://github.com/Hansin1997/Storage</url>
+        <connection>scm:git:https://github.com/dustlight-cn/storage.git</connection>
+        <developerConnection>scm:git:https://github.com/dustlight-cn/storage.git</developerConnection>
+        <url>https://github.com/dustlight-cn/storage</url>
     </scm>
 </project>

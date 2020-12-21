@@ -5,9 +5,9 @@
 **Storage** is project based on java language development, it provides an easy-to-use storage service for the Spring Boot project, including local storage and cloud storage.
 This project is under maintenance. Welcome for your issues and pull request. 😀
 
-[![Build Status](https://travis-ci.org/Hansin1997/Storage.svg?branch=main)](https://travis-ci.org/Hansin1997/Storage) 
-[![GitHub](https://img.shields.io/github/license/Hansin1997/Storage)](LICENSE)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Hansin1997/Storage)](https://github.com/Hansin1997/Storage/releases)
+[![Build Status](https://travis-ci.org/dustlight-cn/storage.svg?branch=main)](https://travis-ci.org/dustlight-cn/storage) 
+[![GitHub](https://img.shields.io/github/license/dustlight-cn/storage)](LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/dustlight-cn/storage)](https://github.com/dustlight-cn/storage/releases)
 
 ## Module
 * [Core Module](storage-core): Provides abstract interfaces and a local storage implementation.
@@ -79,8 +79,8 @@ storage.remove("text.txt"); // Delete object
 ```
 TencentCloudObjectStorage in [Tencent Cloud Object Storage](tencent-cloud-object-storage) provides the URL generated, it can generate the URL for get, put and remove.
 
-See the [wiki](https://github.com/Hansin1997/Storage/wiki) for full instructions.
+See the [wiki](https://github.com/dustlight-cn/storage/wiki) for full instructions.
 
 ## Get Help
-To report a specific problem or feature request, [open a new issue on Github](https://github.com/Hansin1997/Storage/issues/new).
+To report a specific problem or feature request, [open a new issue on Github](https://github.com/dustlight-cn/storage/issues/new).
 For questions, suggestions, or anything else, email [hansin@dustlight.cn](mailto:hansin@dustlight.cn).
