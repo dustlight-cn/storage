@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.5.RELEASE</version>
+        <version>2.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <packaging>pom</packaging>
     <groupId>cn.dustlight.storage</groupId>
     <artifactId>storage</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <name>storage</name>
     <description>Storage service for Spring Boot</description>
 
