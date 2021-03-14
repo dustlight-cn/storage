@@ -25,10 +25,12 @@ public class TencentCloudObjectStorage implements RestfulStorage {
     ExecutorService pool;
 
     public TencentCloudObjectStorage(COSClient cosClient, String bucket) {
-        this(cosClient, bucket, Runtime.getRuntime().availableProcessors() + 1);
+        this(cosClient, bucket, null);
     }
 
-    public TencentCloudObjectStorage(COSClient cosClient, String bucket, int threadCount) {
+    public TencentCloudObjectStorage(COSClient cosClient, String bucket, Integer threadCount) {
+        if (threadCount == null)
+            threadCount = Runtime.getRuntime().availableProcessors() + 1;
         pool = Executors.newFixedThreadPool(threadCount);
         this.cosClient = cosClient;
         this.bucket = bucket;

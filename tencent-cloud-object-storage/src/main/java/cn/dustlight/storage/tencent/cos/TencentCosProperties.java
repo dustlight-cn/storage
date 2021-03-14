@@ -6,13 +6,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "dustlight.storage.tencent.cos")
 public class TencentCosProperties {
 
-    private boolean enabled = true;
     private String secretId;
     private String secretKey;
     private String bucket;
     private String region;
     private String generalApi = null;
     private String serviceApi = "service.cos.myqcloud.com";
+    private Integer threadCount = null;
     private HttpProtocol httpProtocol = HttpProtocol.https;
 
     public String getGeneralApi() {
@@ -71,11 +71,11 @@ public class TencentCosProperties {
         this.region = region;
     }
 
-    public boolean isEnabled() {
-        return enabled;
+    public Integer getThreadCount() {
+        return threadCount;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public void setThreadCount(Integer threadCount) {
+        this.threadCount = threadCount;
     }
 }

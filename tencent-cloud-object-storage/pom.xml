@@ -5,7 +5,7 @@
     <parent>
         <groupId>cn.dustlight.storage</groupId>
         <artifactId>storage</artifactId>
-        <version>0.0.4-SNAPSHOT</version>
+        <version>0.0.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>tencent-cloud-object-storage</artifactId>
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.qcloud</groupId>
             <artifactId>cos_api</artifactId>
-            <version>5.6.28</version>
+            <version>5.6.37</version>
         </dependency>
         <dependency>
             <groupId>cn.dustlight.storage</groupId>

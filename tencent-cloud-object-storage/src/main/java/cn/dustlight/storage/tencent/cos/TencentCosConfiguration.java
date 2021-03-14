@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Bean;
 public class TencentCosConfiguration {
 
     @Bean
-    @ConditionalOnProperty(value = "dustlight.storage.tencent.cos.enabled", matchIfMissing = true)
+    @ConditionalOnProperty(value = "dustlight.storage.tencent.cos")
     public TencentCloudObjectStorage tencentStorage(@Autowired TencentCosProperties properties) {
         COSCredentials cred = new BasicCOSCredentials(properties.getSecretId(), properties.getSecretKey());
         Region region = new Region(properties.getRegion());
@@ -22,7 +22,7 @@ public class TencentCosConfiguration {
         clientConfig.setHttpProtocol(properties.getHttpProtocol());
         clientConfig.setEndpointBuilder(new TencentCosEndpointBuilder(properties.getGeneralApi(), properties.getServiceApi(), clientConfig.getEndpointBuilder()));
         COSClient cosClient = new COSClient(cred, clientConfig);
-        TencentCloudObjectStorage tencentCloudObjectStorage = new TencentCloudObjectStorage(cosClient, properties.getBucket());
+        TencentCloudObjectStorage tencentCloudObjectStorage = new TencentCloudObjectStorage(cosClient, properties.getBucket(), properties.getThreadCount());
         return tencentCloudObjectStorage;
     }
 }
