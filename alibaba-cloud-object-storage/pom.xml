@@ -8,15 +8,15 @@
         <version>0.0.4-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>tencent-cloud-object-storage</artifactId>
-    <name>tencent-cloud-object-storage</name>
-    <description>Tencent COS module for Storage</description>
+    <artifactId>alibaba-cloud-object-storage</artifactId>
+    <name>alibaba-cloud-object-storage</name>
+    <description>Alibaba OSS module for Storage</description>
 
     <dependencies>
         <dependency>
-            <groupId>com.qcloud</groupId>
-            <artifactId>cos_api</artifactId>
-            <version>5.6.37</version>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.10.2</version>
         </dependency>
         <dependency>
             <groupId>cn.dustlight.storage</groupId>

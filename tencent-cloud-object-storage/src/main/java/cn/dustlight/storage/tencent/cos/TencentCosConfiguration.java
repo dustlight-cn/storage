@@ -14,7 +14,8 @@ import org.springframework.context.annotation.Bean;
 public class TencentCosConfiguration {
 
     @Bean
-    @ConditionalOnProperty(value = "dustlight.storage.tencent.cos")
+    @ConditionalOnProperty(prefix = "dustlight.storage.tencent.cos",
+            value = {"secret-id", "secret-key"})
     public TencentCloudObjectStorage tencentStorage(@Autowired TencentCosProperties properties) {
         COSCredentials cred = new BasicCOSCredentials(properties.getSecretId(), properties.getSecretKey());
         Region region = new Region(properties.getRegion());
