@@ -17,7 +17,7 @@ Grab via Maven:
 <dependency>
   <groupId>cn.dustlight.storage</groupId>
     <artifactId>tencent-cloud-object-storage</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
 </dependency>
 ```
 
@@ -28,7 +28,6 @@ dustlight:
   storage:
     tencent:
       cos:
-        enabled: true
         secret-id: <SECRET_ID>
         secret-key: <SECRET_KEY>
         bucket: <BUCKET>
@@ -42,7 +41,6 @@ Or
 
 application.properties: 
 ```properties
-dustlight.storage.tencent.cos.enabled=true
 dustlight.storage.tencent.cos.secret-id=<SECRET_ID>
 dustlight.storage.tencent.cos.secret-key=<SECRET_KEY>
 dustlight.storage.tencent.cos.bucket=<BUCKET>

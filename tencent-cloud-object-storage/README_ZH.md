@@ -17,7 +17,7 @@
 <dependency>
     <groupId>cn.dustlight.storage</groupId>
     <artifactId>tencent-cloud-object-storage</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 ```
 
@@ -28,7 +28,6 @@ dustlight:
   storage:
     tencent:
       cos:
-        enabled: true
         secret-id: <SECRET_ID>
         secret-key: <SECRET_KEY>
         bucket: <BUCKET>
@@ -42,7 +41,6 @@ dustlight:
 
 application.properties: 
 ```properties
-dustlight.storage.tencent.cos.enabled=true
 dustlight.storage.tencent.cos.secret-id=<SECRET_ID>
 dustlight.storage.tencent.cos.secret-key=<SECRET_KEY>
 dustlight.storage.tencent.cos.bucket=<BUCKET>
@@ -52,8 +50,7 @@ dustlight.storage.tencent.cos.region=<REGION>
 #dustlight.storage.tencent.cos.http-protocol=https
 ```
 
-配置项解释：
-* enabled —— 是否启用模块：当 enabled=true 时将自动创建TencentCloudObjectStorage的Bean。（默认为true）
+### 配置项解释
 * secret-id —— 腾讯云SecretID：腾讯云服务访问密钥ID，此密钥需要包含COS访问权限。[查看或创建SecretID&SecretKey](https://console.cloud.tencent.com/cam/capi)
 * secret-key —— 腾讯云SecretID：腾讯云服务访问密钥Key，此密钥需要包含COS访问权限。[查看或创建SecretID&SecretKey](https://console.cloud.tencent.com/cam/capi)
 * bucket —— 储存桶名：TencentCloudObjectStorage基于腾讯云对象储存实现，数据将存储于此存储桶之中。[查看或创建Bucket](https://console.cloud.tencent.com/cos5/bucket)

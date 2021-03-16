@@ -13,7 +13,7 @@ public class AlibabaOssProperties {
     /**
      * 参考：https://help.aliyun.com/document_detail/31837.html
      */
-    private String endpoint = "https://oss-cn-hangzhou.aliyuncs.com";
+    private String endpoint = "oss-cn-hangzhou.aliyuncs.com";
     private Protocol protocol = Protocol.HTTPS;
     private Boolean supportCname;
     private Integer threadCount;

@@ -19,7 +19,7 @@
 <dependency>
   <groupId>cn.dustlight.storage</groupId>
   <artifactId>storage-core</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
 </dependency>
 ```
 

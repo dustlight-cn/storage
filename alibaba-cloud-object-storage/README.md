@@ -17,7 +17,7 @@ Grab via Maven:
 <dependency>
   <groupId>cn.dustlight.storage</groupId>
     <artifactId>alibaba-cloud-object-storage</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
 </dependency>
 ```
 
@@ -26,88 +26,25 @@ application.yaml:
 ```yaml
 dustlight:
   storage:
-    tencent:
-      cos:
-        enabled: true
-        secret-id: <SECRET_ID>
-        secret-key: <SECRET_KEY>
-        bucket: <BUCKET>
-        region: <REGION>
-#        general-api: 
-#        service-api: service.cos.myqcloud.com
-#        http-protocol: https
+    alibaba:
+      oss:
+        access-key-id: YOUR_ACCESS_KEY_ID
+        secret-access-key: YOUR_SECRET_ACCESS_KEY
+        bucket: YOUR_BUCKET_NAME
+        endpoint: YOUR_BUCKET_ENDPOINT
 ```
 
 Or
 
 application.properties: 
 ```properties
-dustlight.storage.tencent.cos.enabled=true
-dustlight.storage.tencent.cos.secret-id=<SECRET_ID>
-dustlight.storage.tencent.cos.secret-key=<SECRET_KEY>
-dustlight.storage.tencent.cos.bucket=<BUCKET>
-dustlight.storage.tencent.cos.region=<REGION>
-#dustlight.storage.tencent.cos.general-api=
-#dustlight.storage.tencent.cos.service-api=service.cos.myqcloud.com
-#dustlight.storage.tencent.cos.http-protocol=https
+dustlight.storage.alibaba.oss.access-key-id=YOUR_ACCESS_KEY_ID
+dustlight.storage.alibaba.oss.secret-access-key=YOUR_SECRET_ACCESS_KEY
+dustlight.storage.alibaba.oss.bucket=YOUR_BUCKET_NAME
+dustlight.storage.alibaba.oss.endpoint=YOUR_BUCKET_ENDPOINT
 ```
-
-Configuration item interpretation:
-* enabled —— When enabled is true, it would create Bean of TencentCloudObjectStorage by configurations. (The default is true)
-* secret-id —— Tencent cloud Secret ID, this key needs to contain COS access. [View or Create SecretID&SecretKey](https://console.cloud.tencent.com/cam/capi)
-* secret-key —— Tencent cloud Secret Key, this key needs to contain COS access. [View or Create SecretID&SecretKey](https://console.cloud.tencent.com/cam/capi)
-* bucket —— Storage bucket name, TencentCloudObjectStorage based on *Tencent Cloud Object Storage* service, the data will be stored in this bucket. [View or Create Bucket](https://console.cloud.tencent.com/cos5/bucket)
-* region —— Storage area, such as "ap-guangzhou". [View Region](https://console.cloud.tencent.com/cos5/bucket)
-* general-api —— Host of generated URL, don't need to change it.
-* service-api —— Tencent Cloud Service API, don't need to change it.
-* http-protocol —— The HTTP protocol for data transfer and generated URL. (The default is HTTPS)
 
 ## Use
-Simple use cases with TencentCloudObjectStorage look like this:
-```java
-package com.example.demo;
-
-import cn.dustlight.storage.core.Permission;
-import cn.dustlight.storage.core.StorableObject;
-import cn.dustlight.storage.local.LocalStorableObject;
-import cn.dustlight.storage.local.LocalStorage;
-import cn.dustlight.storage.tencent.cos.TencentCloudObjectStorage;
-import cn.dustlight.storage.tencent.cos.TencentCloudStorableObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
-
-@SpringBootApplication
-@Component
-public class DemoApplication implements ApplicationRunner {
-
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
-
-    @Autowired
-    TencentCloudObjectStorage cloudStorage; // Tencent Cloud Storage
-    LocalStorage localStorage = LocalStorage.defaultInstance; // Local Storage, the root path of defaultInstance is './'
-
-    public void run(ApplicationArguments args) throws Exception {
-        StorableObject test = localStorage.get("test.txt"); // Get the local object
-
-        TencentCloudStorableObject test2 = cloudStorage.put("test.txt", test); // Copy to cloud storage
-
-        String url = cloudStorage.generateGetUrl(test2.getKey(), 1000L * 60 * 5); // Generate a URL expired at 5 min later
-
-        System.out.println(url);
-
-        LocalStorableObject download = localStorage.put("download.txt", test2, Permission.PUBLIC); // Download from cloud storage to local storage
-
-        System.out.println(download.getFile());
-    }
-}
-```
-
 See the [wiki](https://github.com/dustlight-cn/storage/wiki) for full instructions.
 
 ## Get Help
