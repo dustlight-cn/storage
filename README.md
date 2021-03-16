@@ -14,6 +14,8 @@ This project is under maintenance. Welcome for your issues and pull request. ðŸ˜
 
 * [Tencent Cloud Object Storage Module](tencent-cloud-object-storage): The implementation of the service based on [Tencent Cloud Object Storage (COS)](https://cloud.tencent.com/product/cos).
 
+* [Alibaba Cloud Object Storage Module](alibaba-cloud-object-storage): The implementation of the service based on [Alibaba Cloud Object Storage (OSS)](https://www.aliyun.com/product/oss).
+
 ## Download
 Grab via Maven:
 ```xml
