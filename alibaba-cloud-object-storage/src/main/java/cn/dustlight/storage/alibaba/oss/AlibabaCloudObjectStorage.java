@@ -5,15 +5,13 @@ import cn.dustlight.storage.core.RestfulStorage;
 import cn.dustlight.storage.core.StorableObject;
 import com.aliyun.oss.HttpMethod;
 import com.aliyun.oss.OSS;
-import com.aliyun.oss.model.Bucket;
-import com.aliyun.oss.model.CannedAccessControlList;
-import com.aliyun.oss.model.ObjectMetadata;
-import com.aliyun.oss.model.PutObjectRequest;
+import com.aliyun.oss.model.*;
 import org.apache.http.impl.io.EmptyInputStream;
 
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -95,6 +93,18 @@ public class AlibabaCloudObjectStorage implements RestfulStorage {
     @Override
     public String generateRemoveUrl(String key, Long expiration) throws IOException {
         return oss.generatePresignedUrl(bucket, key, new Date(System.currentTimeMillis() + expiration), HttpMethod.DELETE).toExternalForm();
+    }
+
+    @Override
+    public String generatePutUrl(String key, int permission, Long expiration, Map<String, String> headers) throws IOException {
+        GeneratePresignedUrlRequest generatePresignedUrlRequest = new GeneratePresignedUrlRequest(bucket, key, HttpMethod.PUT);
+        if(headers != null)
+        {
+            if(headers.containsKey("Content-Type"))
+                generatePresignedUrlRequest.setContentType(headers.get("Content-Type"));
+        }
+        generatePresignedUrlRequest.setExpiration(new Date(new Date().getTime() + expiration));
+        return oss.generatePresignedUrl(generatePresignedUrlRequest).toExternalForm();
     }
 
     protected static CannedAccessControlList getACL(int permission) {

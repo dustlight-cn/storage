@@ -12,6 +12,7 @@ import org.apache.http.impl.io.EmptyInputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -56,6 +57,17 @@ public class TencentCloudObjectStorage implements RestfulStorage {
     @Override
     public String generateRemoveUrl(String key, Long expiration) {
         return cosClient.generatePresignedUrl(bucket, key, new Date(System.currentTimeMillis() + expiration), HttpMethodName.DELETE).toExternalForm();
+    }
+
+    @Override
+    public String generatePutUrl(String key, int permission, Long expiration, Map<String, String> headers) throws IOException {
+        GeneratePresignedUrlRequest req = new GeneratePresignedUrlRequest(bucket,key,HttpMethodName.PUT);
+        if(headers != null)
+        {
+            if(headers.containsKey("Content-Type"))
+                req.setContentType(headers.get("Content-Type"));
+        }
+        return cosClient.generatePresignedUrl(req).toExternalForm();
     }
 
     @Override

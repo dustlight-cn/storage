@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
     <groupId>cn.dustlight.storage</groupId>
     <artifactId>storage</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5-SNAPSHOT</version>
     <name>storage</name>
     <description>Storage service for Spring Boot</description>
 
