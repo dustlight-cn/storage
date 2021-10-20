@@ -25,7 +25,6 @@ public class AlibabaCloudStorableObject implements StorableObject {
 
     @Override
     public OutputStream getOutputStream() throws IOException {
-
         PipedOutputStream outputStream = new PipedOutputStream();
         PipedInputStream inputStream = new PipedInputStream();
         outputStream.connect(inputStream);

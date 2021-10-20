@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
     <groupId>cn.dustlight.storage</groupId>
     <artifactId>storage</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6-SNAPSHOT</version>
     <name>storage</name>
     <description>Storage service for Spring Boot</description>
 
@@ -24,6 +24,7 @@
         <module>storage-core</module>
         <module>tencent-cloud-object-storage</module>
         <module>alibaba-cloud-object-storage</module>
+        <module>minio-storage</module>
     </modules>
 
     <dependencyManagement>
@@ -41,6 +42,11 @@
             <dependency>
                 <groupId>cn.dustlight.storage</groupId>
                 <artifactId>alibaba-cloud-object-storage</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dustlight.storage</groupId>
+                <artifactId>minio-storage</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
