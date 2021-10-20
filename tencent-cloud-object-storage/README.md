@@ -17,7 +17,7 @@ Grab via Maven:
 <dependency>
   <groupId>cn.dustlight.storage</groupId>
     <artifactId>tencent-cloud-object-storage</artifactId>
-  <version>0.0.5</version>
+  <version>0.0.6</version>
 </dependency>
 ```
 
