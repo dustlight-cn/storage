@@ -44,29 +44,39 @@ public class TencentCloudObjectStorage implements RestfulStorage {
 
     @Override
     public String generateGetUrl(String key, Long expiration) {
-        return cosClient.generatePresignedUrl(bucket, key, new Date(System.currentTimeMillis() + expiration), HttpMethodName.GET).toExternalForm();
+        return cosClient.generatePresignedUrl(bucket,
+                        key,
+                        expiration == null ? null : new Date(System.currentTimeMillis() + expiration),
+                        HttpMethodName.GET)
+                .toExternalForm();
     }
 
     @Override
     public String generatePutUrl(String key, int permission, Long expiration) {
         GeneratePresignedUrlRequest req = new GeneratePresignedUrlRequest(bucket, key, HttpMethodName.PUT);
-        req.withExpiration(new Date(System.currentTimeMillis() + expiration));
+        if (expiration != null)
+            req.withExpiration(new Date(System.currentTimeMillis() + expiration));
         return cosClient.generatePresignedUrl(req).toExternalForm();
     }
 
     @Override
     public String generateRemoveUrl(String key, Long expiration) {
-        return cosClient.generatePresignedUrl(bucket, key, new Date(System.currentTimeMillis() + expiration), HttpMethodName.DELETE).toExternalForm();
+        return cosClient.generatePresignedUrl(bucket,
+                        key,
+                        expiration == null ? null : new Date(System.currentTimeMillis() + expiration),
+                        HttpMethodName.DELETE)
+                .toExternalForm();
     }
 
     @Override
     public String generatePutUrl(String key, int permission, Long expiration, Map<String, String> headers) throws IOException {
-        GeneratePresignedUrlRequest req = new GeneratePresignedUrlRequest(bucket,key,HttpMethodName.PUT);
-        if(headers != null)
-        {
-            if(headers.containsKey("Content-Type"))
+        GeneratePresignedUrlRequest req = new GeneratePresignedUrlRequest(bucket, key, HttpMethodName.PUT);
+        if (headers != null) {
+            if (headers.containsKey("Content-Type"))
                 req.setContentType(headers.get("Content-Type"));
         }
+        if (expiration != null)
+            req.withExpiration(new Date(System.currentTimeMillis() + expiration));
         return cosClient.generatePresignedUrl(req).toExternalForm();
     }
 

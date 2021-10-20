@@ -82,28 +82,40 @@ public class AlibabaCloudObjectStorage implements RestfulStorage {
 
     @Override
     public String generateGetUrl(String key, Long expiration) throws IOException {
-        return oss.generatePresignedUrl(bucket, key, new Date(System.currentTimeMillis() + expiration), HttpMethod.GET).toExternalForm();
+        return oss.generatePresignedUrl(bucket,
+                        key,
+                        expiration == null ? null : new Date(System.currentTimeMillis() + expiration),
+                        HttpMethod.GET)
+                .toExternalForm();
     }
 
     @Override
     public String generatePutUrl(String key, int permission, Long expiration) throws IOException {
-        return oss.generatePresignedUrl(bucket, key, new Date(System.currentTimeMillis() + expiration), HttpMethod.PUT).toExternalForm();
+        return oss.generatePresignedUrl(bucket,
+                        key,
+                        expiration == null ? null : new Date(System.currentTimeMillis() + expiration),
+                        HttpMethod.PUT)
+                .toExternalForm();
     }
 
     @Override
     public String generateRemoveUrl(String key, Long expiration) throws IOException {
-        return oss.generatePresignedUrl(bucket, key, new Date(System.currentTimeMillis() + expiration), HttpMethod.DELETE).toExternalForm();
+        return oss.generatePresignedUrl(bucket,
+                        key,
+                        expiration == null ? null : new Date(System.currentTimeMillis() + expiration),
+                        HttpMethod.DELETE)
+                .toExternalForm();
     }
 
     @Override
     public String generatePutUrl(String key, int permission, Long expiration, Map<String, String> headers) throws IOException {
         GeneratePresignedUrlRequest generatePresignedUrlRequest = new GeneratePresignedUrlRequest(bucket, key, HttpMethod.PUT);
-        if(headers != null)
-        {
-            if(headers.containsKey("Content-Type"))
+        if (headers != null) {
+            if (headers.containsKey("Content-Type"))
                 generatePresignedUrlRequest.setContentType(headers.get("Content-Type"));
         }
-        generatePresignedUrlRequest.setExpiration(new Date(new Date().getTime() + expiration));
+        if (expiration != null)
+            generatePresignedUrlRequest.setExpiration(new Date(new Date().getTime() + expiration));
         return oss.generatePresignedUrl(generatePresignedUrlRequest).toExternalForm();
     }
 

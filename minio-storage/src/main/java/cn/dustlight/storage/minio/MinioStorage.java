@@ -101,45 +101,50 @@ public class MinioStorage implements RestfulStorage {
     @SneakyThrows
     @Override
     public String generateGetUrl(String key, Long expiration) throws IOException {
-        return client.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder()
+        GetPresignedObjectUrlArgs.Builder builder = GetPresignedObjectUrlArgs.builder()
                 .method(Method.GET)
                 .bucket(bucket)
-                .object(key)
-                .expiry((int) (expiration / 1000))
-                .build());
+                .object(key);
+        if (expiration != null)
+            builder.expiry((int) (expiration / 1000));
+        return client.getPresignedObjectUrl(builder.build());
     }
 
     @SneakyThrows
     @Override
     public String generatePutUrl(String key, int permission, Long expiration) throws IOException {
-        return client.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder()
+        GetPresignedObjectUrlArgs.Builder builder = GetPresignedObjectUrlArgs.builder()
                 .method(Method.PUT)
                 .bucket(bucket)
-                .object(key)
-                .expiry((int) (expiration / 1000))
-                .build());
+                .object(key);
+        if (expiration != null)
+            builder.expiry((int) (expiration / 1000));
+        return client.getPresignedObjectUrl(builder.build());
     }
 
     @SneakyThrows
     @Override
     public String generateRemoveUrl(String key, Long expiration) throws IOException {
-        return client.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder()
+        GetPresignedObjectUrlArgs.Builder builder = GetPresignedObjectUrlArgs.builder()
                 .method(Method.DELETE)
                 .bucket(bucket)
-                .object(key)
-                .expiry((int) (expiration / 1000))
-                .build());
+                .object(key);
+        if (expiration != null)
+            builder.expiry((int) (expiration / 1000));
+        return client.getPresignedObjectUrl(builder.build());
     }
 
     @SneakyThrows
     @Override
     public String generatePutUrl(String key, int permission, Long expiration, Map<String, String> headers) throws IOException {
-        return client.getPresignedObjectUrl(GetPresignedObjectUrlArgs.builder()
+        GetPresignedObjectUrlArgs.Builder builder = GetPresignedObjectUrlArgs.builder()
                 .method(Method.PUT)
-                .extraHeaders(headers)
                 .bucket(bucket)
-                .object(key)
-                .expiry((int) (expiration / 1000))
-                .build());
+                .object(key);
+        if (expiration != null)
+            builder.expiry((int) (expiration / 1000));
+        if (headers != null)
+            builder.extraHeaders(headers);
+        return client.getPresignedObjectUrl(builder.build());
     }
 }
